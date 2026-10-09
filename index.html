@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year 6 Chinese Radicals: 火 & 米</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                        chinese: ['Noto Serif SC', 'serif']
+                    },
+                    colors: {
+                        fire: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c'
+                        },
+                        rice: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s infinite',
+                        'bounce-subtle': 'bounce 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .chinese-char {
+            font-family: 'Noto Serif SC', serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-800 font-sans min-h-screen flex flex-col justify-between select-none relative overflow-x-hidden">
+
+    <div class="fixed inset-0 pointer-events-none opacity-20 z-0 overflow-hidden">
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-red-500 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute top-1/2 -right-24 w-96 h-96 bg-amber-400 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute -bottom-24 left-1/3 w-96 h-96 bg-orange-400 rounded-full blur-3xl animate-pulse-slow"></div>
+    </div>
+
+    <header class="relative z-20 bg-slate-800/90 backdrop-blur-md border-b border-slate-700/50 px-4 py-3 text-white">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-amber-500 to-red-500 w-10 h-10 rounded-2xl shadow-lg flex items-center justify-center font-chinese font-bold text-xl text-white">
+                    字
+                </div>
+                <div>
+                    <h1 class="font-display font-bold text-lg md:text-xl tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-amber-200 to-orange-400">
+                        Year 6 Chinese Radicals
+                    </h1>
+                    <p class="text-xs text-slate-400 font-medium">Radical Module • 火 & 米</p>
+                </div>
+            </div>
+
+            <!-- Narrator Header Bar -->
+            <div id="narrator-header-widget" class="flex items-center bg-slate-900/90 border border-slate-700 rounded-full px-3 py-1.5 shadow-inner">
+                <button id="tts-toggle-btn" onclick="toggleNarratorAudio()" class="w-8 h-8 rounded-full bg-orange-500 text-white flex items-center justify-center hover:bg-orange-400 transition-all shadow-md focus:outline-none">
+                    <i id="tts-icon" class="fa-solid fa-volume-high text-xs"></i>
+                </button>
+                <div class="ml-2.5 mr-1 hidden sm:block">
+                    <span class="block text-[10px] text-slate-400 uppercase font-semibold tracking-wider">Teacher Narrator</span>
+                    <span id="narrator-status-text" class="text-xs font-medium text-amber-300">Ready</span>
+                </div>
+                <div id="audio-wave" class="flex items-center space-x-1 ml-2 hidden">
+                    <span class="w-1 h-3 bg-amber-400 rounded-full animate-bounce"></span>
+                    <span class="w-1 h-4 bg-orange-500 rounded-full animate-bounce [animation-delay:0.1s]"></span>
+                    <span class="w-1 h-2 bg-red-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 max-w-4xl mx-auto px-4 py-6 my-auto w-full">
+        
+        <section id="step-1" class="step-page transition-all duration-300">
+            <div class="glass-card rounded-3xl p-6 md:p-10 shadow-2xl border border-white/20 text-slate-800">
+                <div class="text-center mb-8">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-orange-700 text-xs font-bold uppercase tracking-wider mb-3">
+                        Interactive Learning Guide
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-900 leading-tight">
+                        Discover Radical <span class="text-orange-600 chinese-char">火</span> (Fire) & <span class="text-amber-600 chinese-char">米</span> (Rice)
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm md:text-base max-w-2xl mx-auto">
+                        In Chinese characters, radicals (部首 - bùshǒu) give clues to the word's meaning. Let's explore how <strong class="text-orange-600">火</strong> and <strong class="text-amber-600">米</strong> build words!
+                    </p>
+                </div>
+
+                <!-- Intro Cards Grid -->
+                <div class="grid md:grid-cols-2 gap-6 my-6">
+                    <!-- Radical 火 Card -->
+                    <div class="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200 rounded-2xl p-6 hover:shadow-xl transition-all group relative overflow-hidden">
+                        <div class="absolute -right-4 -bottom-4 text-orange-200/60 font-chinese text-9xl font-black group-hover:scale-110 transition-transform">
+                            火
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-orange-500 to-red-500 text-white flex items-center justify-center font-chinese text-4xl shadow-md">
+                                    火
+                                </span>
+                                <span class="bg-orange-200/80 text-orange-800 font-bold text-xs px-3 py-1 rounded-full">
+                                    Pinyin: huǒ
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-1">Fire Radical (火 / 灬)</h3>
+                            <p class="text-xs text-orange-700 font-semibold mb-3">Variant Form: 灬 (Four Dots at Bottom)</p>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                Represents <strong>heat, light, cooking, burning, or high energy</strong>. When placed at the bottom, it often transforms into four dots (灬)!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Radical 米 Card -->
+                    <div class="bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-2xl p-6 hover:shadow-xl transition-all group relative overflow-hidden">
+                        <div class="absolute -right-4 -bottom-4 text-amber-200/60 font-chinese text-9xl font-black group-hover:scale-110 transition-transform">
+                            米
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-500 text-white flex items-center justify-center font-chinese text-4xl shadow-md">
+                                    米
+                                </span>
+                                <span class="bg-amber-200/80 text-amber-800 font-bold text-xs px-3 py-1 rounded-full">
+                                    Pinyin: mǐ
+                                </span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-1">Rice Radical (米)</h3>
+                            <p class="text-xs text-amber-700 font-semibold mb-3">Meaning: Grains & Food Culture</p>
+                            <p class="text-sm text-slate-700 leading-relaxed">
+                                Represents <strong>grains, crops, sticky or powdery substances, and food</strong>. It is essential in Chinese agricultural history!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Speech Banner -->
+                <div class="bg-slate-900 text-white p-4 md:p-5 rounded-2xl flex items-start space-x-4 shadow-lg border border-slate-700">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-400 to-orange-500 flex-shrink-0 flex items-center justify-center text-slate-900 text-xl font-bold shadow-md">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold text-amber-400 uppercase tracking-wide">Teacher Narrator Says:</span>
+                            <button onclick="readCurrentStepScript()" class="text-xs text-orange-300 hover:text-white underline flex items-center gap-1">
+                                <i class="fa-solid fa-play text-[10px]"></i> Listen
+                            </button>
+                        </div>
+                        <p id="narrator-text-step-1" class="text-sm text-slate-200 leading-relaxed italic">
+                            "Hello Year 6 students! Today, we will learn about two very important Chinese radicals: 火 (huǒ) which means Fire, and 米 (mǐ) which means Rice. Radicals are the key building blocks of Chinese characters. Click 'Next' to start our deep dive!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="step-2" class="step-page hidden transition-all duration-300">
+            <div class="glass-card rounded-3xl p-6 md:p-10 shadow-2xl border border-white/20 text-slate-800">
+                
+                <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+                    <div>
+                        <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Part 1 of 3 • Fire Radical</span>
+                        <h2 class="text-2xl md:text-3xl font-display font-bold text-slate-900">
+                            The Story of Radical <span class="chinese-char text-orange-600">火</span> (Huǒ)
+                        </h2>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-4xl font-chinese font-bold text-orange-600">火 / 灬</span>
+                    </div>
+                </div>
+
+                <!-- Radical Graphic -->
+                <div class="bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl p-6 text-white mb-8 shadow-lg">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-orange-100 mb-3 text-center">
+                        Did You Know? The Two Forms of Fire
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-center items-center">
+                        <div class="bg-white/10 rounded-xl p-3 backdrop-blur-sm">
+                            <div class="text-3xl font-chinese font-bold mb-1">火</div>
+                            <div class="text-xs text-orange-100">Left / Side Radical</div>
+                            <div class="text-[11px] text-amber-200 mt-1">e.g. 炒 (chǎo), 烟 (yān)</div>
+                        </div>
+                        <div class="bg-white/10 rounded-xl p-3 backdrop-blur-sm">
+                            <div class="text-3xl font-chinese font-bold mb-1">灬</div>
+                            <div class="text-xs text-orange-100">Bottom Radical</div>
+                            <div class="text-[11px] text-amber-200 mt-1">e.g. 照 (zhào), 焦 (jiāo)</div>
+                        </div>
+                        <div class="col-span-2 md:col-span-1 bg-white/20 rounded-xl p-3 backdrop-blur-sm border border-white/30">
+                            <div class="text-xs font-semibold text-white">Meaning Key:</div>
+                            <p class="text-xs text-orange-100 mt-1">Cook, Heat, Flame, Light & Energy!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vocabulary Flashcards for Fire -->
+                <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-fire text-orange-500"></i> Vocabulary Flashcards (Click to Listen)
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div onclick="playCharAudio('炒', 'chǎo', 'Stir-fry')" class="bg-white p-4 rounded-2xl border-2 border-orange-100 hover:border-orange-400 hover:shadow-lg transition-all cursor-pointer text-center group">
+                        <div class="text-4xl font-chinese font-bold text-slate-800 group-hover:scale-110 transition-transform">
+                            <span class="text-orange-600">炒</span>
+                        </div>
+                        <div class="text-xs font-bold text-orange-600 mt-2">chǎo</div>
+                        <div class="text-xs text-slate-600 font-medium">To Stir-fry</div>
+                        <div class="mt-2 text-[10px] bg-orange-50 text-orange-700 py-1 rounded-lg">炒饭 (Fried Rice)</div>
+                    </div>
+
+                    <div onclick="playCharAudio('烧', 'shāo', 'Roast / Burn')" class="bg-white p-4 rounded-2xl border-2 border-orange-100 hover:border-orange-400 hover:shadow-lg transition-all cursor-pointer text-center group">
+                        <div class="text-4xl font-chinese font-bold text-slate-800 group-hover:scale-110 transition-transform">
+                            <span class="text-orange-600">烧</span>
+                        </div>
+                        <div class="text-xs font-bold text-orange-600 mt-2">shāo</div>
+                        <div class="text-xs text-slate-600 font-medium">Roast / Burn</div>
+                        <div class="mt-2 text-[10px] bg-orange-50 text-orange-700 py-1 rounded-lg">发烧 (Fever)</div>
+                    </div>
+
+                    <div onclick="playCharAudio('烟', 'yān', 'Smoke')" class="bg-white p-4 rounded-2xl border-2 border-orange-100 hover:border-orange-400 hover:shadow-lg transition-all cursor-pointer text-center group">
+                        <div class="text-4xl font-chinese font-bold text-slate-800 group-hover:scale-110 transition-transform">
+                            <span class="text-orange-600">烟</span>
+                        </div>
+                        <div class="text-xs font-bold text-orange-600 mt-2">yān</div>
+                        <div class="text-xs text-slate-600 font-medium">Smoke / Mist</div>
+                        <div class="mt-2 text-[10px] bg-orange-50 text-orange-700 py-1 rounded-lg">烟花 (Fireworks)</div>
+                    </div>
+
+                    <div onclick="playCharAudio('照', 'zhào', 'Shine / Photo')" class="bg-white p-4 rounded-2xl border-2 border-red-100 hover:border-red-400 hover:shadow-lg transition-all cursor-pointer text-center group">
+                        <div class="text-4xl font-chinese font-bold text-slate-800 group-hover:scale-110 transition-transform">
+                            照
+                        </div>
+                        <div class="text-xs font-bold text-red-600 mt-2">zhào</div>
+                        <div class="text-xs text-slate-600 font-medium">Shine / Photo</div>
+                        <div class="mt-2 text-[10px] bg-red-50 text-red-700 py-1 rounded-lg">Bottom radical 灬</div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white p-4 rounded-2xl flex items-start space-x-3 shadow-md border border-slate-700">
+                    <i class="fa-solid fa-volume-high text-orange-400 text-lg mt-1"></i>
+                    <p id="narrator-text-step-2" class="text-sm text-slate-200 italic">
+                        "Notice how the radical 火 turns into four dots (灬) when it is located at the bottom of a character like 照! Both forms mean heat or light."
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="step-3" class="step-page hidden transition-all duration-300">
+            <div class="glass-card rounded-3xl p-6 md:p-10 shadow-2xl border border-white/20 text-slate-800">
+                
+                <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+                    <div>
+                        <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">Part 2 of 3 • Rice Radical</span>
+                        <h2 class="text-2xl md:text-3xl font-display font-bold text-slate-900">
+                            The Story of Radical <span class="chinese-char text-amber-600">米</span> (Mǐ)
+                        </h2>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-4xl font-chinese font-bold text-amber-600">米</span>
+                    </div>
+                </div>
+
+                <!-- History Banner -->
+                <div class="bg-gradient-to-r from-amber-500 to-yellow-600 rounded-2xl p-6 text-white mb-8 shadow-lg">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-amber-100 mb-2 text-center">
+                        Evolution of Rice Grains
+                    </h3>
+                    <p class="text-xs text-amber-100 text-center max-w-xl mx-auto mb-4">
+                        Ancient Chinese people drew grains of rice scattered around a stem. Today, it forms characters related to food, agriculture, and sweet foods.
+                    </p>
+                    <div class="flex justify-around items-center max-w-md mx-auto bg-white/10 p-3 rounded-xl backdrop-blur-sm">
+                        <div class="text-center">
+                            <span class="block text-2xl font-bold font-chinese">米</span>
+                            <span class="text-[10px] text-amber-200">Modern Radical</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-amber-200 text-xs"></i>
+                        <div class="text-center">
+                            <span class="block text-xs font-semibold">Grain / Rice</span>
+                            <span class="text-[10px] text-amber-200">Agriculture</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-amber-200 text-xs"></i>
+                        <div class="text-center">
+                            <span class="block text-xs font-semibold">Sweet & Food</span>
+                            <span class="text-[10px] text-amber-200">Texture/Sugar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flashcards for Rice -->
+                <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-bowl-rice text-amber-600"></i> Vocabulary Flashcards (Click to Listen)
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div onclick="playCharAudio('粒', 'lì', 'Grain / Particle')" class="bg-white p-4 rounded-2xl border-2 border-amber-100 hover:border-amber-400 hover:shadow-lg transition-all cursor-pointer text-center group">
+                        <div class="text-4xl font-chinese font-bold text-slate-800 group-hover:scale-110 transition-transform">
+                            <span class="text-amber-600">粒</span>
+                        </div>
+                        <div class="text-xs font-bold text-amber-600 mt-2">lì</div>
+                        <div class="text-xs text-slate-600 font-medium">Grain / Particle</div>
+                        <div class="mt-2 text-[10px] bg-amber-50 text-amber-700 py-1 rounded-lg">一粒米 (A grain)</div>
+                    </div>
+
+                    <div onclick="playCharAudio('粮', 'liáng', 'Food Grain')" class="bg-white p-4 rounded-2xl border-2 border-amber-100 hover:border-amber-400 hover:shadow-lg transition-all cursor-pointer text-center group">
+                        <div class="text-4xl font-chinese font-bold text-slate-800 group-hover:scale-110 transition-transform">
+                            <span class="text-amber-600">粮</span>
+                        </div>
+                        <div class="text-xs font-bold text-amber-600 mt-2">liáng</div>
+                        <div class="text-xs text-slate-600 font-medium">Food Grain</div>
+                        <div class="mt-2 text-[10px] bg-amber-50 text-amber-700 py-1 rounded-lg">粮食 (Provisions)</div>
+                    </div>
+
+                    <div onclick="playCharAudio('糖', 'táng', 'Sugar / Candy')" class="bg-white p-4 rounded-2xl border-2 border-amber-100 hover:border-amber-400 hover:shadow-lg transition-all cursor-pointer text-center group">
+                        <div class="text-4xl font-chinese font-bold text-slate-800 group-hover:scale-110 transition-transform">
+                            <span class="text-amber-600">糖</span>
+                        </div>
+                        <div class="text-xs font-bold text-amber-600 mt-2">táng</div>
+                        <div class="text-xs text-slate-600 font-medium">Sugar / Candy</div>
+                        <div class="mt-2 text-[10px] bg-amber-50 text-amber-700 py-1 rounded-lg">糖果 (Candy)</div>
+                    </div>
+
+                    <div onclick="playCharAudio('精', 'jīng', 'Refined / Excellent')" class="bg-white p-4 rounded-2xl border-2 border-amber-100 hover:border-amber-400 hover:shadow-lg transition-all cursor-pointer text-center group">
+                        <div class="text-4xl font-chinese font-bold text-slate-800 group-hover:scale-110 transition-transform">
+                            <span class="text-amber-600">精</span>
+                        </div>
+                        <div class="text-xs font-bold text-amber-600 mt-2">jīng</div>
+                        <div class="text-xs text-slate-600 font-medium">Refined / Essence</div>
+                        <div class="mt-2 text-[10px] bg-amber-50 text-amber-700 py-1 rounded-lg">精彩 (Wonderful)</div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white p-4 rounded-2xl flex items-start space-x-3 shadow-md border border-slate-700">
+                    <i class="fa-solid fa-volume-high text-amber-400 text-lg mt-1"></i>
+                    <p id="narrator-text-step-3" class="text-sm text-slate-200 italic">
+                        "Great job! Character 糖 (sugar) uses radical 米 because sugar historically was extracted from grains and crops!"
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="step-4" class="step-page hidden transition-all duration-300">
+            <div class="glass-card rounded-3xl p-6 md:p-10 shadow-2xl border border-white/20 text-slate-800">
+                
+                <div class="text-center mb-6">
+                    <span class="text-xs font-bold text-purple-600 uppercase tracking-widest bg-purple-100 px-3 py-1 rounded-full">
+                        Part 3 of 3 • Practice Sorting
+                    </span>
+                    <h2 class="text-2xl md:text-3xl font-display font-bold text-slate-900 mt-2">
+                        Sort the Chinese Characters!
+                    </h2>
+                    <p class="text-slate-600 text-sm mt-1">
+                        Click on each character to place it into the correct radical box (<strong class="text-orange-600">火/灬</strong> or <strong class="text-amber-600">米</strong>)!
+                    </p>
+                </div>
+
+                <!-- Sorting Boxes -->
+                <div class="grid md:grid-cols-2 gap-6 my-6">
+                    <!-- Fire Box -->
+                    <div id="fire-basket" class="bg-gradient-to-b from-orange-50 to-red-50 border-2 border-dashed border-orange-300 rounded-2xl p-4 text-center min-h-[160px] transition-all">
+                        <div class="flex items-center justify-center space-x-2 text-orange-600 font-bold mb-2">
+                            <i class="fa-solid fa-fire text-lg"></i>
+                            <span>Fire Radical Box (火 / 灬)</span>
+                        </div>
+                        <div id="fire-box-items" class="flex flex-wrap gap-2 justify-center min-h-[90px] items-center p-2"></div>
+                    </div>
+
+                    <!-- Rice Box -->
+                    <div id="rice-basket" class="bg-gradient-to-b from-amber-50 to-yellow-50 border-2 border-dashed border-amber-300 rounded-2xl p-4 text-center min-h-[160px] transition-all">
+                        <div class="flex items-center justify-center space-x-2 text-amber-600 font-bold mb-2">
+                            <i class="fa-solid fa-bowl-rice text-lg"></i>
+                            <span>Rice Radical Box (米)</span>
+                        </div>
+                        <div id="rice-box-items" class="flex flex-wrap gap-2 justify-center min-h-[90px] items-center p-2"></div>
+                    </div>
+                </div>
+
+                <!-- Pool -->
+                <div class="bg-slate-100 rounded-2xl p-4 border border-slate-200">
+                    <div class="text-xs font-bold text-slate-500 uppercase tracking-wider text-center mb-3">
+                        Tap a character below to sort:
+                    </div>
+                    <div id="character-pool" class="flex flex-wrap gap-3 justify-center"></div>
+                </div>
+
+                <div id="game-feedback" class="mt-4 text-center text-sm font-bold h-6 text-emerald-600"></div>
+
+                <div class="bg-slate-900 text-white p-4 rounded-2xl flex items-start space-x-3 shadow-md border border-slate-700 mt-4">
+                    <i class="fa-solid fa-gamepad text-purple-400 text-lg mt-1"></i>
+                    <p id="narrator-text-step-4" class="text-sm text-slate-200 italic">
+                        "Awesome job sorting! Once you complete all items, click Next to go to the official Wordwall Quiz!"
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="step-5" class="step-page hidden transition-all duration-300">
+            <div class="glass-card rounded-3xl p-6 md:p-10 shadow-2xl border border-white/20 text-slate-800 text-center">
+                
+                <div class="w-20 h-20 bg-gradient-to-tr from-emerald-400 to-teal-500 text-white rounded-full flex items-center justify-center text-3xl mx-auto shadow-xl mb-4 animate-bounce-subtle">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+
+                <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
+                    Lesson Completed! 🎉
+                </span>
+
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-slate-900 mb-3">
+                    Sila buat kuiz di link Wordwall!
+                </h2>
+                <p class="text-slate-600 max-w-lg mx-auto text-sm md:text-base mb-6">
+                    Congratulations on learning about radicals <strong>火</strong> and <strong>米</strong>! Complete the interactive Wordwall quiz embedded below or click the button to open full page!
+                </p>
+
+                <!-- Wordwall Card Action Box -->
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 md:p-8 rounded-3xl shadow-xl max-w-xl mx-auto mb-6 relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl font-black">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-gamepad text-amber-300"></i> Wordwall Radical Quiz
+                    </h3>
+                    <p class="text-xs text-blue-100 mb-6">
+                        Click the button below to open the Wordwall quiz in a new tab.
+                    </p>
+
+                    <a id="wordwall-primary-btn" href="https://wordwall.net/play/120933/023/886?wwmethod=link" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center space-x-3 bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-8 py-4 rounded-2xl shadow-lg transition-all transform hover:-translate-y-1 hover:shadow-2xl text-base md:text-lg">
+                        <span>Buka Kuiz Wordwall Now</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+                <!-- Embedded Wordwall iFrame Frame -->
+                <div class="my-6 max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700 bg-slate-900">
+                    <div class="bg-slate-800 px-4 py-2 text-xs font-bold text-slate-300 flex justify-between items-center">
+                        <span><i class="fa-solid fa-window-maximize text-amber-400 mr-2"></i> Wordwall Embedded Quiz</span>
+                        <a href="https://wordwall.net/play/120933/023/886?wwmethod=link" target="_blank" class="text-amber-400 hover:underline text-[11px]">Buka Fullscreen <i class="fa-solid fa-external-link"></i></a>
+                    </div>
+                    <iframe id="wordwall-iframe" src="https://wordwall.net/embed/120933/023/886?wwmethod=link" class="w-full h-[400px] border-0" allowfullscreen></iframe>
+                </div>
+
+                <!-- Custom Link Updater -->
+                <div class="bg-slate-100 rounded-2xl p-4 max-w-md mx-auto border border-slate-200 text-left">
+                    <label class="block text-xs font-bold text-slate-600 mb-1">
+                        <i class="fa-solid fa-link text-slate-400"></i> Wordwall Quiz URL:
+                    </label>
+                    <div class="flex gap-2">
+                        <input type="url" id="custom-wordwall-url" value="https://wordwall.net/play/120933/023/886?wwmethod=link" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500">
+                        <button onclick="updateWordwallLink()" class="bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-xl hover:bg-slate-700">Update</button>
+                    </div>
+                    <div id="url-update-toast" class="hidden text-[11px] text-emerald-600 font-semibold mt-1">Updated successfully!</div>
+                </div>
+
+                <div class="bg-slate-900 text-white p-4 rounded-2xl flex items-start space-x-3 shadow-md border border-slate-700 max-w-xl mx-auto mt-6">
+                    <i class="fa-solid fa-star text-amber-400 text-lg mt-1"></i>
+                    <p id="narrator-text-step-5" class="text-sm text-slate-200 italic">
+                        "Sila buat kuiz di link Wordwall! Excellent effort today. Good luck with your quiz!"
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative z-30 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 py-4 px-4">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+            
+            <!-- Previous Button -->
+            <button id="prev-btn" onclick="navigateStep(-1)" class="opacity-50 pointer-events-none flex items-center space-x-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold px-5 py-3 rounded-2xl transition-all border border-slate-700 text-sm">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span class="hidden sm:inline">Previous</span>
+            </button>
+
+            <!-- Step Dots -->
+            <div class="flex items-center space-x-2">
+                <span class="step-dot w-6 h-3 rounded-full bg-orange-500 transition-all"></span>
+                <span class="step-dot w-3 h-3 rounded-full bg-slate-700 transition-all"></span>
+                <span class="step-dot w-3 h-3 rounded-full bg-slate-700 transition-all"></span>
+                <span class="step-dot w-3 h-3 rounded-full bg-slate-700 transition-all"></span>
+                <span class="step-dot w-3 h-3 rounded-full bg-slate-700 transition-all"></span>
+            </div>
+
+            <!-- Next Button -->
+            <button id="next-btn" onclick="navigateStep(1)" class="flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 text-slate-900 font-bold px-7 py-3 rounded-2xl shadow-lg hover:shadow-orange-500/20 transition-all transform hover:scale-105 text-sm">
+                <span id="next-btn-text">Start: Radical 火</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+        </div>
+    </footer>
+
+    <script>
+        /* State Variables */
+        let currentStep = 1;
+        const totalSteps = 5;
+        let isAudioSpeaking = false;
+
+        /* Practice Character Dataset */
+        const practiceCharacters = [
+            { id: 1, char: '炒', pinyin: 'chǎo', radical: 'fire' },
+            { id: 2, char: '粒', pinyin: 'lì', radical: 'rice' },
+            { id: 3, char: '烧', pinyin: 'shāo', radical: 'fire' },
+            { id: 4, char: '糖', pinyin: 'táng', radical: 'rice' },
+            { id: 5, char: '照', pinyin: 'zhào', radical: 'fire' },
+            { id: 6, char: '粮', pinyin: 'liáng', radical: 'rice' },
+            { id: 7, char: '烟', pinyin: 'yān', radical: 'fire' },
+            { id: 8, char: '精', pinyin: 'jīng', radical: 'rice' }
+        ];
+
+        let gameState = {
+            unassigned: [...practiceCharacters],
+            fireBox: [],
+            riceBox: []
+        };
+
+        /* Narrator Script Map */
+        const scripts = {
+            1: "Hello Year 6 students! Welcome to Chinese Radicals learning. Today we will explore two radicals: 火 (huǒ) which means Fire, and 米 (mǐ) which means Rice. Click Next to continue!",
+            2: "Radical Fire is written as 火 on the side, or as four dots 灬 at the bottom of a character like 照. It relates to heat, light, and cooking.",
+            3: "Radical Rice is written as 米. It came from ancient drawings of rice grains on a plant, and is used for foods, grains, and sweet candy!",
+            4: "Let's do a quick sorting warm-up! Click on each character to move it into the correct radical box.",
+            5: "Sila buat kuiz di link Wordwall! Click the Wordwall button to open your quiz in a new tab."
+        };
+
+        window.onload = function() {
+            renderGamePool();
+            updateNavigationUI();
+            
+            // Trigger narration on initial load
+            setTimeout(() => {
+                readCurrentStepScript();
+            }, 300);
+
+            // User gesture unlock for browser audio policy
+            document.body.addEventListener('click', function unlockAudio() {
+                if (!isAudioSpeaking) {
+                    readCurrentStepScript();
+                }
+            }, { once: true });
+        };
+
+        /* Step Navigation Handler */
+        function navigateStep(direction) {
+            // STOP previous audio narration immediately upon step change
+            stopAudio();
+
+            const nextStep = currentStep + direction;
+            if (nextStep >= 1 && nextStep <= totalSteps) {
+                // Hide existing page
+                document.getElementById(`step-${currentStep}`).classList.add('hidden');
+                
+                currentStep = nextStep;
+                
+                // Show new page
+                document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+                
+                // Update navigation bar
+                updateNavigationUI();
+
+                // Autoplay audio for new page without delay
+                readCurrentStepScript();
+
+                // Auto-open Wordwall link when reaching Step 5
+                if (currentStep === 5) {
+                    setTimeout(() => {
+                        const targetUrl = document.getElementById('wordwall-primary-btn').href;
+                        window.open(targetUrl, '_blank');
+                    }, 600);
+                }
+            }
+        }
+
+        /* Nav UI Updater */
+        function updateNavigationUI() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const nextBtnText = document.getElementById('next-btn-text');
+
+            if (currentStep === 1) {
+                prevBtn.classList.add('opacity-50', 'pointer-events-none');
+            } else {
+                prevBtn.classList.remove('opacity-50', 'pointer-events-none');
+            }
+
+            if (currentStep === 1) {
+                nextBtnText.textContent = "Start: Radical 火";
+            } else if (currentStep === 2) {
+                nextBtnText.textContent = "Next: Radical 米";
+            } else if (currentStep === 3) {
+                nextBtnText.textContent = "Start Practice";
+            } else if (currentStep === 4) {
+                nextBtnText.textContent = "Go to Wordwall Quiz";
+            } else if (currentStep === 5) {
+                nextBtnText.textContent = "Complete";
+                nextBtn.classList.add('opacity-50', 'pointer-events-none');
+            } else {
+                nextBtn.classList.remove('opacity-50', 'pointer-events-none');
+            }
+
+            // Dots UI
+            const dots = document.querySelectorAll('.step-dot');
+            dots.forEach((dot, index) => {
+                if (index + 1 === currentStep) {
+                    dot.className = "step-dot w-6 h-3 rounded-full bg-orange-500 transition-all";
+                } else if (index + 1 < currentStep) {
+                    dot.className = "step-dot w-3 h-3 rounded-full bg-amber-400 transition-all";
+                } else {
+                    dot.className = "step-dot w-3 h-3 rounded-full bg-slate-700 transition-all";
+                }
+            });
+        }
+
+        /* Read Current Step Script */
+        function readCurrentStepScript() {
+            const textToSpeak = scripts[currentStep];
+            if (textToSpeak) {
+                speakText(textToSpeak, 'en-US');
+            }
+        }
+
+        /* Play Chinese Word Audio */
+        function playCharAudio(char, pinyin, meaning) {
+            stopAudio();
+            speakText(`${char}. ${pinyin}. ${meaning}`, 'zh-CN');
+        }
+
+        /* Speech Synthesis Engine */
+        function speakText(text, lang = 'en-US') {
+            stopAudio();
+            if ('speechSynthesis' in window) {
+                setNarratorUIState(true);
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = lang;
+                utterance.rate = 1.0;
+
+                utterance.onend = () => setNarratorUIState(false);
+                utterance.onerror = () => setNarratorUIState(false);
+
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        /* Immediate Audio Cancellation */
+        function stopAudio() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+            setNarratorUIState(false);
+        }
+
+        /* Toggle Speech On/Off */
+        function toggleNarratorAudio() {
+            if (isAudioSpeaking) {
+                stopAudio();
+            } else {
+                readCurrentStepScript();
+            }
+        }
+
+        /* Update Narrator Indicator Visuals */
+        function setNarratorUIState(isSpeaking) {
+            isAudioSpeaking = isSpeaking;
+            const statusText = document.getElementById('narrator-status-text');
+            const wave = document.getElementById('audio-wave');
+            const icon = document.getElementById('tts-icon');
+
+            if (isSpeaking) {
+                if (statusText) statusText.textContent = "Speaking...";
+                if (wave) wave.classList.remove('hidden');
+                if (icon) icon.className = "fa-solid fa-volume-high text-xs text-amber-300 animate-pulse";
+            } else {
+                if (statusText) statusText.textContent = "Ready";
+                if (wave) wave.classList.add('hidden');
+                if (icon) icon.className = "fa-solid fa-volume-high text-xs";
+            }
+        }
+
+        function renderGamePool() {
+            const poolEl = document.getElementById('character-pool');
+            const fireBoxEl = document.getElementById('fire-box-items');
+            const riceBoxEl = document.getElementById('rice-box-items');
+
+            if (!poolEl || !fireBoxEl || !riceBoxEl) return;
+
+            poolEl.innerHTML = '';
+            fireBoxEl.innerHTML = '';
+            riceBoxEl.innerHTML = '';
+
+            gameState.unassigned.forEach(item => {
+                const btn = createCharCard(item);
+                poolEl.appendChild(btn);
+            });
+
+            gameState.fireBox.forEach(item => {
+                const badge = document.createElement('span');
+                badge.className = "bg-orange-500 text-white font-chinese font-bold text-lg px-3 py-1.5 rounded-xl shadow-md";
+                badge.textContent = `${item.char} (${item.pinyin})`;
+                fireBoxEl.appendChild(badge);
+            });
+
+            gameState.riceBox.forEach(item => {
+                const badge = document.createElement('span');
+                badge.className = "bg-amber-500 text-white font-chinese font-bold text-lg px-3 py-1.5 rounded-xl shadow-md";
+                badge.textContent = `${item.char} (${item.pinyin})`;
+                riceBoxEl.appendChild(badge);
+            });
+
+            const feedback = document.getElementById('game-feedback');
+            if (gameState.unassigned.length === 0 && feedback) {
+                feedback.textContent = "🎉 Fantastic! All characters sorted correctly! Click 'Next' to proceed!";
+            }
+        }
+
+        function createCharCard(item) {
+            const div = document.createElement('div');
+            div.className = "bg-white p-3 rounded-2xl border-2 border-slate-200 hover:border-orange-400 shadow-sm cursor-pointer flex items-center space-x-2 transition-all hover:scale-105";
+            div.innerHTML = `<span class="text-2xl font-chinese font-bold text-slate-800">${item.char}</span><span class="text-xs text-slate-500">(${item.pinyin})</span>`;
+            
+            div.onclick = () => {
+                playCharAudio(item.char, item.pinyin, item.radical === 'fire' ? 'Fire Radical' : 'Rice Radical');
+                
+                // Sort item into corresponding basket
+                gameState.unassigned = gameState.unassigned.filter(i => i.id !== item.id);
+                if (item.radical === 'fire') {
+                    gameState.fireBox.push(item);
+                } else {
+                    gameState.riceBox.push(item);
+                }
+                renderGamePool();
+            };
+
+            return div;
+        }
+
+        function updateWordwallLink() {
+            const input = document.getElementById('custom-wordwall-url').value.trim();
+            const primaryBtn = document.getElementById('wordwall-primary-btn');
+            const iframe = document.getElementById('wordwall-iframe');
+            const toast = document.getElementById('url-update-toast');
+
+            if (input) {
+                primaryBtn.href = input;
+                const embedUrl = input.replace('/play/', '/embed/');
+                if (iframe) iframe.src = embedUrl;
+
+                if (toast) {
+                    toast.classList.remove('hidden');
+                    setTimeout(() => toast.classList.add('hidden'), 2500);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
